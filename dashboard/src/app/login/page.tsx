@@ -7,7 +7,6 @@ import { MdOutlineVisibilityOff, MdVisibility } from "react-icons/md";
 import { useRouter } from 'next/navigation';
 import { userLogin } from '../utils/fetchlogin';
 import { setCookie } from 'cookies-next';
-import Link from 'next/link';
 const loginSchema = Yup.object().shape({
   username: Yup.string().required('Required'),
   password: Yup.string().required('Required'),
