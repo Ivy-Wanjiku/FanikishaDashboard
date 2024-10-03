@@ -3,15 +3,15 @@ import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import Layout from "../Layout";
 import { useFetchFarmers } from "../hooks/useFetchFarmers";
-import { Farmer } from "../utils/types";
+import { Farmers } from "../utils/types";
 import AddFarmerModal from "../addFarmerModal";
 
 const FarmersDashboard: React.FC = () => {
   const { data, isLoading, error } = useFetchFarmers();
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [farmers, setFarmers] = useState<Farmer[]>([]);
-  const [sortedFarmers, setSortedFarmers] = useState<Farmer[]>([]);
+  const [farmers, setFarmers] = useState<Farmers[]>([]);
+  const [sortedFarmers, setSortedFarmers] = useState<Farmers[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const farmersPerPage = 10;
 
@@ -27,7 +27,7 @@ const FarmersDashboard: React.FC = () => {
   }, [data]);
 
   useEffect(() => {
-    const filteredFarmers: Farmer[] = farmers.filter((farmer) =>
+    const filteredFarmers: Farmers[] = farmers.filter((farmer) =>
       farmer.first_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -53,7 +53,7 @@ const FarmersDashboard: React.FC = () => {
     return date.toISOString().split("T")[0];
   };
 
-  const handleAddFarmer = (postFarmer: Farmer) => {
+  const handleAddFarmer = (postFarmer: Farmers) => {
     const newFarmer = {
       ...postFarmer,
       created_at: new Date().toISOString(),

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Farmer } from "../utils/types";
+import { Farmers } from "../utils/types";
 import { displayFarmers } from "../utils/fetchAccounts";
 
 export const useFetchFarmers = () => {
-  const [data, setData] = useState<Farmer[]>([]);
+  const [data, setData] = useState<Farmers[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -13,7 +13,7 @@ export const useFetchFarmers = () => {
         const result = await displayFarmers(
           "https://fanikisha-3beb7fcefffe.herokuapp.com/api/farmers"
         );
-        
+
         if (result && Array.isArray(result.farmers)) {
           setData(result.farmers);
         } else {

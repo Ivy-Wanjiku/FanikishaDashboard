@@ -35,7 +35,7 @@ export interface Farmer {
     totalPriceData: number[];
   }
 
-  export interface Farmer {
+  export interface Farmers {
     first_name: string;
     last_name: string;
     cooperative_number: string;
