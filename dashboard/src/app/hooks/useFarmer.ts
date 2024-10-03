@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchFarmers } from "../../../utils/fetchFarmers";
+import { fetchFarmers } from "../utils/fetchFarmers";
 
 export const useFarmers = () => {
   const [data, setData] = useState([]);

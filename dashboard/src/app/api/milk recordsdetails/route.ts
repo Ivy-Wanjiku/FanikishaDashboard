@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { MilkRecord } from "@/app/(cooperative)/cooperative/utils/types";
+import { MilkRecord } from "@/app/utils/types";
 
 const API_BASE_URL = "https://fanikisha-3beb7fcefffe.herokuapp.com";
 
